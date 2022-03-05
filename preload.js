@@ -1,3 +1,5 @@
+const { contextBridge, ipcRenderer } = require("electron");
+
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
 window.addEventListener("DOMContentLoaded", () => {
@@ -9,4 +11,9 @@ window.addEventListener("DOMContentLoaded", () => {
     for (const dependency of ["chrome", "node", "electron"]) {
         replaceText(`${dependency}-version`, process.versions[dependency]);
     }
+});
+
+contextBridge.exposeInMainWorld("darkMode", {
+    toggle: () => ipcRenderer.invoke("dark-mode:toggle"),
+    system: () => ipcRenderer.invoke("dark-mode:system"),
 });
