@@ -1,0 +1,23 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "Test Electron app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshorion7/my-electron-app.git"
+  },
+  "author": "Josh Butler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshorion7/my-electron-app/issues"
+  },
+  "homepage": "https://github.com/joshorion7/my-electron-app#readme",
+  "devDependencies": {
+    "electron": "^17.1.0"
+  }
+}
